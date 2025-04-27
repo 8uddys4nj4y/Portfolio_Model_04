@@ -1,0 +1,62 @@
+/* Footer Styles */
+
+.footer-brand {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+  
+  .footer-brand.active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .footer-nav {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    transition-delay: 0.1s;
+  }
+  
+  .footer-nav.active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .footer-social {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    transition-delay: 0.2s;
+  }
+  
+  .footer-social.active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .footer-link {
+    color: var(--color-white);
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+  
+  .footer-link:hover {
+    color: var(--color-nature-green);
+  }
+  
+  .footer-social-link {
+    color: var(--color-white);
+    transition: color 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .footer-social-link:hover {
+    color: var(--color-nature-green);
+  }
+  
+  .footer-social-link span {
+    font-size: 1.25rem;
+  }

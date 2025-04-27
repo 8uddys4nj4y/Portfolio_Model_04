@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sanjay's Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/main.css">
+  <!-- Separate component styles -->
+  <link rel="stylesheet" href="styles/hero.css">
+
+  <link rel="stylesheet" href="styles/header.css">
+  <link rel="stylesheet" href="styles/skills.css">
+  <link rel="stylesheet" href="styles/services.css">
+  <link rel="stylesheet" href="styles/projects.css">
+  <link rel="stylesheet" href="styles/certificates.css">
+  <link rel="stylesheet" href="styles/contact.css">
+  <link rel="stylesheet" href="styles/footer.css">
+  <link rel="stylesheet" href="styles/intro.css">
+</head>
+<body>
+  <div id="root">
+    <!-- Intro Animation Scene -->
+    <div id="intro-scene" class="fixed inset-0 bg-nature-dark z-50 flex items-center justify-center overflow-hidden">
+      <button id="skip-intro" class="absolute top-4 right-4 bg-transparent border border-white text-white hover:bg-white hover:text-nature-dark z-50 px-3 py-1.5 rounded-md text-sm">
+        Skip <span class="icon-x"></span>
+      </button>
+
+      <!-- Sunrise Background -->
+      <div class="absolute inset-0 w-full h-full">
+        <div id="sunrise-bg" class="absolute inset-0 bg-gradient-sunrise opacity-0"></div>
+        
+        <!-- Mountain Silhouette -->
+        <div id="mountain-silhouette" class="absolute bottom-0 w-full h-1/3 bg-nature-dark transform translate-y-200"
+             style="clip-path: polygon(0% 100%, 30% 0%, 70% 40%, 100% 10%, 100% 100%)">
+        </div>
+        
+        <!-- Sun -->
+        <img id="sun" src="img/profilePictureSet.jpg" class="absolute rounded-full bg-nature-orange opacity-0" style="left: 50%; transform: translateX(-50%) translateY(120px); width: 150px; height: 150px;">
+        
+        <!-- Birds -->
+        <div class="bird bird-1 text-4xl opacity-0">✧</div>
+        <div class="bird bird-2 text-3xl opacity-0">✧</div>
+        <div class="bird bird-3 text-2xl opacity-0">✧</div>
+      </div>
+
+      <!-- Text Overlay -->
+      <div id="intro-text" class="relative z-10 text-center opacity-0">
+        <h1 class="text-5xl md:text-7xl font-playfair font-bold text-white drop-shadow-lg transform translate-y-50">
+          It's Sanjay here
+        </h1>
+        
+        <div class="mt-4 text-xl md:text-2xl text-white opacity-80 transform translate-y-50">
+          Welcome Buddies !
+        </div>
+      </div>
+    </div>
+
+    <div id="main-content" class="opacity-0">
+      <!-- Header -->
+      <header id="main-header" class="fixed top-0 left-0 w-full z-40 py-5 transition-all duration-300">
+        <div class="container mx-auto px-10 flex justify-between items-center">
+          <!-- Logo -->
+          <div class="flex items-center">
+            <a href="#home" class="text-xl font-playfair font-bold text-nature-dark dark:text-white">
+              8uddy<span class="text-nature-green">s4nj4y</span>
+            </a>
+          </div>
+
+          <!-- Desktop Navigation -->
+          <nav class="hidden md:flex items-center gap-6">
+            <a href="#home" class="nav-link">Home</a>
+            <a href="#skills" class="nav-link">Skills</a>
+            <a href="#services" class="nav-link">Services</a>
+            <a href="#certificates" class="nav-link">Certificates</a>
+            <a href="#projects" class="nav-link">Projects</a>
+            <a href="#contact" class="nav-link">Contact</a>
+          </nav>
+
+          <!-- Mobile Menu Button -->
+          <div class="md:hidden">
+            <button id="mobile-menu-button" class="text-nature-dark dark:text-white p-2">
+              <span class="icon-menu"></span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        
+        <div id="mobile-menu" class="fixed inset-0 bg-white dark:bg-nature-dark z-50 flex-col p-6 hidden">
+          <div class="flex justify-between items-center mb-8">
+            <a href="#home"  class="text-xl font-playfair font-bold text-nature-dark dark:text-white">
+              8uddy<span class="text-nature-green">s4nj4y</span>
+            </a>
+            <button id="mobile-menu-close" class="text-nature-dark dark:text-white p-2">
+              <span class="icon-x"></span>
+            </button>
+          </div>
+          
+          <nav class="flex flex-col gap-6 mt-8">
+            <a href="#home" class="mobile-nav-link">Home</a>
+            <a href="#skills" class="mobile-nav-link">Skills</a>
+            <a href="#services" class="mobile-nav-link">Services</a>
+            <a href="#certificates" class="mobile-nav-link">Certificates</a>
+            <a href="#projects" class="mobile-nav-link">Projects</a>
+            <a href="#contact" class="mobile-nav-link">Contact</a>
+          </nav>
+        </div>
+      </header>
+
+      <main>
+        <!-- Hero Section -->
+        <section id="home" class="relative min-h-screen flex items-center pt-20">
+          <!-- Background layers -->
+          <div class="absolute inset-0 bg-gradient-to-b from-nature-light to-white dark:from-nature-dark dark:to-gray-900 overflow-hidden">
+            <!-- Mountain layers - parallax effect -->
+            <div 
+              class="mountain-bg-1 absolute bottom-0 left-0 right-0 h-64 bg-nature-green/30 dark:bg-nature-green/10"
+              style="clip-path: polygon(0 100%, 100% 100%, 100% 30%, 75% 50%, 50% 20%, 25% 40%, 0 30%);"
+            ></div>
+            
+            <div 
+              class="mountain-bg-2 absolute bottom-0 left-0 right-0 h-52 bg-nature-blue/20 dark:bg-nature-blue/10"
+              style="clip-path: polygon(0 100%, 100% 100%, 100% 40%, 80% 60%, 60% 30%, 40% 40%, 20% 20%, 0 40%);"
+            ></div>
+
+            <!-- Animated particles -->
+            <div id="particle-container" class="absolute inset-0 overflow-hidden pointer-events-none"></div>
+          </div>
+
+          <div class="container mx-auto px-4 pt-16 pb-10 relative z-10">
+            <div class="flex flex-col lg:flex-row items-center justify-between gap-10">
+              <!-- Text content -->
+              <div class="hero-text lg:w-1/2">
+                <h1 class="text-4xl md:text-6xl font-playfair font-bold text-nature-dark dark:text-white mb-6 leading-tight">
+                  Creative <span class="text-nature-green">Developer</span> & <br/>
+                  <span class="text-gradient bg-gradient-sunrise">Designer</span>
+                </h1>
+
+                <p class="text-lg md:text-xl text-gray-700 dark:text-gray-300 mb-8 max-w-xl">
+                  I'm Sanjay, a passionate developer specializing in creating immersive digital experiences that blend 
+                  beautiful design with powerful functionality.
+                </p>
+
+                <div class="flex flex-wrap gap-4 mb-8">
+                  <a href="#projects" style="text-decoration: none;" class="btn btn-primary bg-nature-green hover:bg-nature-green/80 text-white px-4 py-2">
+                    View My Work
+                  </a>
+                  <a href="#contact" style="text-decoration: none;" class="btn btn-outline border-nature-green text-nature-green hover:bg-nature-green/10 px-4 py-2">
+                    Contact Me
+                  </a>
+                </div>
+
+                <!-- Social Links -->
+                <div class="flex gap-4">
+                  <a href="https://youtube.com/@codewith8uddy?si=vDEMHVhkCNQH3nk_" target="_blank" rel="noopener noreferrer" class="social-link">
+                    <span class="icon-youtube"></span>
+                  </a>
+                  <a href="https://www.linkedin.com/in/codewith8uddy-sanjay-642a36353" target="_blank" rel="noopener noreferrer" class="social-link">
+                    <span class="icon-linkedin"></span>
+                  </a>
+                  <a href="https://www.instagram.com/8uddys4nj4y" target="_blank" rel="noopener noreferrer" class="social-link">
+                    <span class="icon-instagram"></span>
+                  </a>
+                  <a href="https://github.com/8uddys4nj4y" target="_blank" rel="noopener noreferrer" class="social-link">
+                    <span class="icon-github"></span>
+                  </a>
+                </div>
+              </div>
+
+              <!-- Profile image -->
+              <div class="profile-container lg:w-1/2 relative perspective">
+                <div class="relative w-64 h-64 sm:w-80 sm:h-80 mx-auto">
+                  <!-- Profile photo -->
+                  <div class="profile-photo absolute inset-0 rounded-full border-4 border-nature-green shadow-xl overflow-hidden bg-gradient-to-b from-nature-blue to-nature-green">
+                    <img src="img/profilePictureSet.jpg" alt="Sanjay's Profile" style="box-shadow: 0 0 10px rgba(0, 123, 255, 0.6), 0 4px 12px rgba(0, 0, 0, 0.4);" class="w-full h-full object-cover">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Scroll indicator -->
+            <div class="scroll-indicator absolute bottom-8 left-1/2 transform -translate-x-1/2">
+              <span class="icon-arrow-down text-nature-dark dark:text-white"></span>
+            </div>
+          </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="py-20 relative overflow-hidden bg-gradient-to-br from-white to-nature-light dark:from-nature-dark dark:to-gray-900">
+          <!-- Background elements -->
+          <div class="absolute inset-0 z-0">
+            <div class="skills-wave absolute top-0 left-0 w-full h-32 bg-gradient-to-r from-nature-blue/30 to-nature-green/30" 
+                 style="border-radius: 50% 50% 0 0 / 100% 100% 0 0;">
+            </div>
+            
+            <div id="skills-particles" class="absolute inset-0 overflow-hidden pointer-events-none"></div>
+          </div>
+          
+          <div class="container mx-auto px-4 relative z-10">
+            <div class="skills-heading text-center mb-16">
+              <h2 class="text-3xl md:text-4xl font-playfair font-bold text-nature-dark dark:text-white mb-4">
+                My <span class="text-nature-green">Skills</span>
+              </h2>
+              <p class="max-w-2xl mx-auto text-gray-600 dark:text-gray-300">
+                I've developed expertise in various technologies, with a focus on creating immersive and responsive experiences.
+              </p>
+            </div>
+            
+            <div class="skills-grid grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-8 md:gap-12">
+              <div class="skill-icon-wrapper">
+                <div class="skill-icon" data-icon="html">
+                  <img src='img/html.png' class="icon-html"></img>
+                </div>
+                <span class="skill-name">HTML</span>
+              </div>
+              <div class="skill-icon-wrapper">
+                <div class="skill-icon" data-icon="css">
+                  <img src='img/css3.png' class="icon-css"></img>
+                </div>
+                <span class="skill-name">CSS</span>
+              </div>
+              <div class="skill-icon-wrapper">
+                <div class="skill-icon" data-icon="js">
+                  <img src='img/java-script.png' class="icon-javascript"></imgn>
+                </div>
+                <span class="skill-name">JavaScript</span>
+              </div>
+              <div class="skill-icon-wrapper">
+                <div class="skill-icon" data-icon="react">
+                  <img src='img/science.png' class="icon-react"></img>
+                </div>
+                <span class="skill-name">React</span>
+              </div>
+              <div class="skill-icon-wrapper">
+                <div class="skill-icon" data-icon="python">
+                  <img src='img/python.png' class="icon-python"></img>
+                </div>
+                <span class="skill-name">Python</span>
+              </div>
+              <div class="skill-icon-wrapper">
+                <div class="skill-icon" data-icon="csharp">
+                  <img src='img/c-sharp.png' class="icon-csharp"></img>
+                </div>
+                <span class="skill-name">C#</span>
+              </div>
+              <div class="skill-icon-wrapper">
+                <div class="skill-icon" data-icon="cpp">
+                  <img src='img/c-.png' class="icon-cpp"></img>
+                </div>
+                <span class="skill-name">C++</span>
+              </div>
+              <div class="skill-icon-wrapper">
+                <div class="skill-icon" data-icon="sql">
+                  <img src='img/sql-server.png' class="icon-database"></img>
+                </div>
+                <span class="skill-name">SQL</span>
+              </div>
+              <div class="skill-icon-wrapper">
+                <div class="skill-icon" data-icon="unity">
+                  <img src='img/unity (1).png' class="icon-unity"></img>
+                </div>
+                <span class="skill-name">Unity</span>
+              </div>
+              <div class="skill-icon-wrapper">
+                <div class="skill-icon" data-icon="blender">
+                  <img src='img/icons8-blender-512.png' class="icon-blender"></img>
+                </div>
+                <span class="skill-name">Blender</span>
+              </div>
+              <div class="skill-icon-wrapper">
+                <div class="skill-icon" data-icon="arduino">
+                  <img src='img/Arduino_IDE_logo.svg.png' class="icon-arduino"></img>
+                </div>
+                <span class="skill-name">Arduino</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="py-20 bg-gradient-to-b from-nature-light to-white dark:from-gray-900 dark:to-nature-dark">
+          <div class="container mx-auto px-4">
+            <div class="service-heading text-center mb-16">
+              <h2 class="text-3xl md:text-4xl font-playfair font-bold text-nature-dark dark:text-white mb-4">
+                My <span class="text-nature-green">Services</span>
+              </h2>
+              <p class="max-w-2xl mx-auto text-gray-600 dark:text-gray-300">
+                I offer specialized services that combine technical expertise with creative design to deliver exceptional digital experiences.
+              </p>
+            </div>
+
+            <div class="services-grid grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
+              <div class="service-card1 perspective">
+                <div class="service-card-inner">
+                  <div class="service-icon-container">
+                    <div class="service-icon-bg"></div>
+                    <div class="service-icon-content">
+                      <span class="icon-code"></span>
+                    </div>
+                  </div>
+                  
+                  <h3 class="service-title">Frontend Development</h3>
+                  
+                  <p class="service-description">
+                    Creating responsive and interactive web applications with modern technologies and smooth animations.
+                  </p>
+                  
+                  <div class="service-divider"></div>
+                </div>
+              </div>
+
+              <div class="service-card2 perspective">
+                <div class="service-card-inner">
+                  <div class="service-icon-container">
+                    <div class="service-icon-bg"></div>
+                    <div class="service-icon-content">
+                      <span class="icon-gamepad"></span>
+                    </div>
+                  </div>
+                  
+                  <h3 class="service-title">Game Development</h3>
+                  
+                  <p class="service-description">
+                    Developing engaging games with Unity and other powerful game engines for various platforms.
+                  </p>
+                  
+                  <div class="service-divider"></div>
+                </div>
+              </div>
+
+              <div class="service-card3 perspective">
+                <div class="service-card-inner">
+                  <div class="service-icon-container">
+                    <div class="service-icon-bg"></div>
+                    <div class="service-icon-content">
+                      <span class="icon-shapes"></span>
+                    </div>
+                  </div>
+                  
+                  <h3 class="service-title">3D Modeling</h3>
+                  
+                  <p class="service-description">
+                    Designing detailed 3D models using Blender for games, animations, and interactive experiences.
+                  </p>
+                  
+                  <div class="service-divider"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Certificates Section -->
+        <section id="certificates" class="py-20 bg-gray-50 dark:bg-gray-900">
+          <div class="container mx-auto px-4">
+            <div class="certificate-heading text-center mb-16">
+              <h2 class="text-3xl md:text-4xl font-playfair font-bold text-nature-dark dark:text-white mb-4">
+                My <span class="text-nature-green">Certificates</span>
+              </h2>
+              <p class="max-w-2xl mx-auto text-gray-600 dark:text-gray-300">
+                Professional certifications that validate my expertise and ongoing education in the field.
+              </p>
+            </div>
+
+            <div class="certificates-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <div class="certificate-card">
+                <div class="certificate-image-container">
+                  <img src="assets/certificate-js.jpg" alt="JavaScript Certificate" class="w-full h-48 object-cover">
+                </div>
+                <div class="certificate-details">
+                  <h3 class="certificate-title">JavaScript Certificate</h3>
+                  <div class="certificate-meta">
+                    <span class="certificate-issuer">FreeCodeCamp</span>
+                    <span class="certificate-date">2023</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="certificate-card">
+                <div class="certificate-image-container">
+                  <img src="assets/certificate-frontend.jpg" alt="Frontend Certificate" class="w-full h-48 object-cover">
+                </div>
+                <div class="certificate-details">
+                  <h3 class="certificate-title">Frontend Certificate</h3>
+                  <div class="certificate-meta">
+                    <span class="certificate-issuer">Udemy</span>
+                    <span class="certificate-date">2022</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="py-20 bg-white dark:bg-nature-dark relative overflow-hidden">
+          <!-- Background element -->
+          <div class="absolute -top-32 -left-32 w-64 h-64 md:w-96 md:h-96 bg-nature-blue/10 dark:bg-nature-blue/5 rounded-full blur-3xl"></div>
+          <div class="absolute -bottom-32 -right-32 w-64 h-64 md:w-96 md:h-96 bg-nature-green/10 dark:bg-nature-green/5 rounded-full blur-3xl"></div>
+          
+          <div class="container mx-auto px-4 relative z-10">
+            <div class="project-heading text-center mb-16">
+              <h2 class="text-3xl md:text-4xl font-playfair font-bold text-nature-dark dark:text-white mb-4">
+                My <span class="text-nature-green">Projects</span>
+              </h2>
+              <p class="max-w-2xl mx-auto text-gray-600 dark:text-gray-300">
+                A showcase of my recent work, including web applications, games, and 3D models.
+              </p>
+            </div>
+
+            <div class="projects-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <div class="project-card">
+                <div class="project-image">
+                  <div class="project-placeholder">🖼️</div>
+                  <div class="project-overlay">
+                    <div class="project-buttons">
+                      <a href="#" class="project-btn project-btn-live">
+                        <span class="icon-external-link"></span> Live
+                      </a>
+                      <a href="#" class="project-btn project-btn-code">
+                        <span class="icon-github"></span> Code
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="project-details">
+                  <h3 class="project-title">Modern Web App</h3>
+                  <p class="project-description">A responsive web application with animations and modern UI design</p>
+                  
+                  <div class="project-tags">
+                    <span class="project-tag">React</span>
+                    <span class="project-tag">Tailwind CSS</span>
+                    <span class="project-tag">GSAP</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="project-card">
+                <div class="project-image">
+                  <div class="project-placeholder">🖼️</div>
+                  <div class="project-overlay">
+                    <div class="project-buttons">
+                      <a href="#" class="project-btn project-btn-live">
+                        <span class="icon-external-link"></span> Live
+                      </a>
+                      <a href="#" class="project-btn project-btn-code">
+                        <span class="icon-github"></span> Code
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="project-details">
+                  <h3 class="project-title">Mobile Game</h3>
+                  <p class="project-description">An adventure game built with Unity for mobile platforms</p>
+                  
+                  <div class="project-tags">
+                    <span class="project-tag">Unity</span>
+                    <span class="project-tag">C#</span>
+                    <span class="project-tag">3D Modeling</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="project-card">
+                <div class="project-image">
+                  <div class="project-placeholder">🖼️</div>
+                  <div class="project-overlay">
+                    <div class="project-buttons">
+                      <a href="#" class="project-btn project-btn-live">
+                        <span class="icon-external-link"></span> Live
+                      </a>
+                      <a href="#" class="project-btn project-btn-code">
+                        <span class="icon-github"></span> Code
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="project-details">
+                  <h3 class="project-title">3D Character Model</h3>
+                  <p class="project-description">Detailed character model created in Blender for a game project</p>
+                  
+                  <div class="project-tags">
+                    <span class="project-tag">Blender</span>
+                    <span class="project-tag">3D Modeling</span>
+                    <span class="project-tag">Animation</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-20 bg-gray-50 dark:bg-gray-900 relative overflow-hidden">
+          <!-- Background effects -->
+          <div class="absolute inset-0 bg-gradient-to-br from-nature-light to-nature-blue/20 dark:from-nature-dark dark:to-nature-blue/10 z-0"></div>
+          <div id="contact-particles" class="absolute inset-0 overflow-hidden pointer-events-none"></div>
+          
+          <div class="container mx-auto px-4 relative z-10">
+            <div class="contact-heading text-center mb-16">
+              <h2 class="text-3xl md:text-4xl font-playfair font-bold text-nature-dark dark:text-white mb-4">
+                Get In <span class="text-nature-green">Touch</span>
+              </h2>
+              <p class="max-w-2xl mx-auto text-gray-600 dark:text-gray-300">
+                Have a project in mind or want to collaborate? Send me a message and I'll get back to you as soon as possible.
+              </p>
+            </div>
+
+            <div class="max-w-xl mx-auto">
+              <div class="contact-form-container bg-white dark:bg-gray-800 rounded-xl shadow-lg p-8">
+                <form id="contact-form" class="space-y-6">
+                  <div class="space-y-2">
+                    <label for="name" class="block text-sm font-medium text-gray-700 dark:text-gray-300">
+                      Name
+                    </label>
+                    <input
+                      type="text"
+                      id="name"
+                      name="name"
+                      placeholder="Your name"
+                      class="form-input w-full"
+                      required
+                    >
+                    <p class="error-message hidden text-red-500 text-xs mt-1"></p>
+                  </div>
+
+                  <div class="space-y-2">
+                    <label for="email" class="block text-sm font-medium text-gray-700 dark:text-gray-300">
+                      Email
+                    </label>
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      placeholder="Your email"
+                      class="form-input w-full"
+                      required
+                    >
+                    <p class="error-message hidden text-red-500 text-xs mt-1"></p>
+                  </div>
+
+                  <div class="space-y-2">
+                    <label for="message" class="block text-sm font-medium text-gray-700 dark:text-gray-300">
+                      Message
+                    </label>
+                    <textarea
+                      id="message"
+                      name="message"
+                      placeholder="Your message"
+                      rows="5"
+                      class="form-textarea w-full resize-none"
+                      required
+                    ></textarea>
+                    <p class="error-message hidden text-red-500 text-xs mt-1"></p>
+                  </div>
+
+                  <button
+                    type="submit"
+                    id="submit-button"
+                    class="submit-button w-full bg-nature-green hover:bg-nature-green/80 text-white px-4 py-2 rounded"
+                  >
+                    <span class="icon-send mr-2"></span> Send Message
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <!-- Footer -->
+      <footer class="py-10 bg-nature-dark text-white">
+        <div class="container mx-auto px-4">
+          <div class="flex flex-col md:flex-row justify-between items-center">
+            <!-- Logo & Name -->
+            <div class="footer-brand mb-6 md:mb-0">
+              <h3 class="text-xl font-playfair font-bold">
+                Sanjay<span class="text-nature-green">.dev</span>
+              </h3>
+              <p class="text-sm text-gray-400 mt-1">Creating digital experiences</p>
+            </div>
+            
+            <!-- Navigation -->
+            <div class="footer-nav flex flex-wrap justify-center gap-6 mb-6 md:mb-0">
+              <a href="#home" class="footer-link">Home</a>
+              <a href="#skills" class="footer-link">Skills</a>
+              <a href="#services" class="footer-link">Services</a>
+              <a href="#projects" class="footer-link">Projects</a>
+              <a href="#contact" class="footer-link">Contact</a>
+            </div>
+            
+            <!-- Social Links -->
+            <div class="footer-social flex gap-4">
+              <a href="https://github.com/8uddys4nj4y" class="footer-social-link">
+                <span class="icon-github"></span>
+              </a>
+              <a href="https://www.linkedin.com/in/codewith8uddy-sanjay-642a36353" class="footer-social-link">
+                <span class="icon-linkedin"></span>
+              </a>
+              <a href="#" class="footer-social-link">
+                <span class="icon-twitter"></span>
+              </a>
+              <a href="mailto:devdudesanjay@gmail.com" class="footer-social-link">
+                <span class="icon-mail"></span>
+              </a>
+            </div>
+          </div>
+          
+          <div class="mt-10 pt-6 border-t border-gray-800 text-center text-sm text-gray-500">
+            <p>&copy; <span id="current-year"></span> Sanjay. All rights reserved.</p>
+          </div>
+        </div>
+      </footer>
+
+      <!-- Toast notifications -->
+      <div id="toast-container" class="fixed top-4 right-4 z-50"></div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/utils.js"></script>
+  <script src="js/iconify.min.js"></script>
+  <script src="js/particles.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/intro.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

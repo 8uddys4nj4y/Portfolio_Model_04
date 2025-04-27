@@ -1,0 +1,129 @@
+/* Hero Section Styles */
+
+/* Mountain parallax backgrounds */
+.mountain-bg-1,
+.mountain-bg-2 {
+  transition: transform 0.3s ease-out;
+}
+
+/* Profile image container */
+.profile-container {
+  opacity: 0;
+  animation: fadeScaleIn 0.8s 0.2s forwards;
+}
+
+.profile-photo {
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease-out;
+  animation: pulseShadow 4s infinite alternate;
+}
+
+/* Hero text animation */
+.hero-text {
+  opacity: 0;
+  transform: translateX(-50px);
+  animation: slideInLeft 0.8s forwards;
+}
+
+/* Text gradient */
+.bg-gradient-sunrise {
+  background-size: 200% auto;
+  animation: gradientShift 8s ease infinite;
+}
+
+/* Scroll indicator */
+.scroll-indicator {
+  animation: bounce 1.5s infinite;
+}
+
+/* Animations */
+@keyframes fadeScaleIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes pulseShadow {
+  0% {
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  }
+  50% {
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.4);
+  }
+  100% {
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  }
+}
+
+@keyframes slideInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0) translateX(-50%);
+  }
+  40% {
+    transform: translateY(-10px) translateX(-50%);
+  }
+  60% {
+    transform: translateY(-5px) translateX(-50%);
+  }
+}
+
+/* Particles */
+.particle {
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.6);
+  border-radius: 50%;
+  animation: floatUp var(--duration, 20s) linear infinite;
+  animation-delay: var(--delay, 0s);
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(0) translateX(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100vh) translateX(var(--translateX, 0));
+    opacity: 0;
+  }
+}
+.skill-icon img{
+  max-width: 60px;
+  max-height: 60px;
+}
+.skill-icon-wrapper{
+  background-color: white;
+}

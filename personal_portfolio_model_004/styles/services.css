@@ -1,0 +1,129 @@
+/* Services Section Styles */
+
+.service-heading {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  
+  .service-heading.active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .service-card {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  
+  .service-card.active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .service-card-inner {
+    background-color: var(--color-white);
+    border-radius: 1rem;
+    box-shadow: var(--shadow-lg);
+    overflow: hidden;
+    padding: 2rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .service-card1:hover .service-card-inner {
+    transform: translateY(-5px) rotateX(5deg) rotateY(5deg);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  }
+  .service-card2:hover .service-card-inner {
+    transform: translateY(-5px) rotateX(0deg) rotateY(0deg);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  }
+  .service-card3:hover .service-card-inner {
+    transform: translateY(-5px) rotateX(5deg) rotateY(-5deg);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  }
+  .service-icon-container {
+    position: relative;
+    width: 4rem;
+    height: 4rem;
+    margin: 0 auto 1.5rem;
+  }
+  
+  .service-icon-bg {
+    position: absolute;
+    inset: 0;
+    background-color: var(--color-nature-green);
+    border-radius: 0.75rem;
+    transition: transform 0.3s ease;
+  }
+  
+  .service-card:hover .service-icon-bg {
+    transform: rotate(45deg);
+  }
+  
+  .service-icon-content {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-white);
+  }
+  
+  .service-icon-content span {
+    font-size: 2rem;
+  }
+  
+  .service-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    text-align: center;
+    color: var(--color-nature-dark);
+    margin-bottom: 0.75rem;
+  }
+  
+  .service-description {
+    text-align: center;
+    color: var(--color-gray-600);
+    transition: opacity 0.3s ease;
+  }
+  
+  .service-card:hover .service-description {
+    opacity: 1;
+  }
+  
+  .service-divider {
+    width: 3rem;
+    height: 0.25rem;
+    background-color: var(--color-nature-green);
+    margin: 1rem auto 0;
+    border-radius: 9999px;
+    transition: width 0.3s ease, opacity 0.3s ease;
+    opacity: 0.7;
+  }
+  
+  .service-card:hover .service-divider {
+    width: 3.75rem;
+    opacity: 1;
+  }
+  
+  /* Apply animation delay to service cards */
+  .service-card:nth-child(1) { transition-delay: 0s; }
+  .service-card:nth-child(2) { transition-delay: 0.2s; }
+  .service-card:nth-child(3) { transition-delay: 0.4s; }
+  
+  /* Dark mode adjustments */
+  @media (prefers-color-scheme: dark) {
+    .service-card-inner {
+      background-color: var(--color-gray-800);
+    }
+  
+    .service-title {
+      color: var(--color-white);
+    }
+  
+    .service-description {
+      color: var(--color-gray-300);
+    }
+  }

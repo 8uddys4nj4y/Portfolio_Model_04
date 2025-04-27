@@ -1,0 +1,121 @@
+/* Contact Section Styles */
+
+.contact-heading {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  
+  .contact-heading.active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .contact-form-container {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+  
+  .contact-form-container.active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .submit-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.625rem 1.25rem;
+    font-weight: 500;
+    border-radius: 0.375rem;
+    transition: all 0.2s ease;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .submit-button:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+  }
+  
+  .submit-button-loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .spinner {
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top: 2px solid white;
+    width: 1rem;
+    height: 1rem;
+    animation: spin 1s linear infinite;
+    margin-right: 0.5rem;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  /* Toast notification */
+  .toast {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    padding: 1rem;
+    background-color: var(--color-white);
+    border-radius: 0.5rem;
+    box-shadow: var(--shadow-lg);
+    display: flex;
+    flex-direction: column;
+    min-width: 16rem;
+    max-width: 24rem;
+    z-index: 100;
+    transform: translateY(-1rem);
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+  
+  .toast.show {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  
+  .toast-success {
+    border-left: 4px solid var(--color-nature-green);
+  }
+  
+  .toast-error {
+    border-left: 4px solid #ef4444;
+  }
+  
+  .toast-title {
+    font-weight: 600;
+    color: var(--color-nature-dark);
+    font-size: 1rem;
+    margin-bottom: 0.25rem;
+  }
+  
+  .toast-message {
+    color: var(--color-gray-600);
+    font-size: 0.875rem;
+  }
+  
+  /* Dark mode adjustments */
+  @media (prefers-color-scheme: dark) {
+    .toast {
+      background-color: var(--color-gray-800);
+    }
+    
+    .toast-title {
+      color: var(--color-white);
+    }
+    
+    .toast-message {
+      color: var(--color-gray-400);
+    }
+  }
